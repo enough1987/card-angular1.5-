@@ -22,6 +22,7 @@ testApp.service('cardServ', function ($q) {
     };
 
     this.set_card = function(item) {
+        _card =  this.get_card();
         if( _is_item_exist(item) ) { console.error('this item was added before'); return false; }
         _card.push(item);
         window.localStorage.setItem( 'card', JSON.stringify(_card) );

@@ -68,9 +68,9 @@ testApp.component('cardCmpt', {
     this.card = cardServ.get_card();
     
     cardServ.observe_card().then(null, null, angular.bind(this, function( card ){
-      console.log( 'cardCmpt got new card ' );
+      console.log( 'cardCmpt got new card ', this.card );
       this.card = card;
-      console.log( this.card );
+      console.log( 'new ', this.card );
     }));
 
     this.change_card_view = function(){
