@@ -2,9 +2,16 @@
     height: 100%;
 }
 
+.test-small {
+    font-size: 0.8em;
+}
+
+.padding-small {
+    padding: 0.1em;
+}
 
 .single-product {
-    padding: 2em 5%;  
+    padding: 4em 5% 2em;  
 }
 
 .card-small {

@@ -10,25 +10,27 @@ ng-hide="$ctrl.searched_products && !$ctrl.searched_products.length"
         <div class="col-xs-12 col-sm-4 height-100">
             <img ng-src="{{product.img}}" class="img-responsive height-100" />
         </div>
-        <p> 
-            <span> Only {{ product.left }} left </span>
-        </p>
-        <h3> {{ product.title }} </h3>
-        <ul>
-            <li 
+        <div class="col-xs-12 col-sm-8">
+            <p class="text-right padding-small test-small"> 
+                Only {{ product.left }} left 
+            </p>
+            <h3 class="text-center" > {{ product.title }} </h3>
+            <ul class="list-unstyled">
+                <li 
 ng-repeat=" description in product.description"
-            >
-                {{ description }}
-            </li>
-        </ul>
-        <p> 
-            <span> Price: {{ product.price }}</span>
-            <span> Shipping: {{ product.shipping }}</span>
-        </p>
-        <input 
-ng-click=" $ctrl.add_to_card(product) "        
+                >
+                    {{ description }}
+                </li>
+            </ul>
+            <p>        
+                <span class="col-xs-12 col-sm-6 text-left padding-small test-small "> Price: {{ product.price }} </span>
+                <span class="col-xs-12 col-sm-6 text-right padding-small test-small"> Shipping: {{ product.shipping }} </span>
+            </p>
+            <input 
+ng-click=" $ctrl.add_to_card(product) " 
+        class="btn btn-default"       
         type="button" value="add to card" />
-    </div>
+        </div>
 
    <div 
    ng-show="$ctrl.searched_products && !$ctrl.searched_products.length" >
