@@ -1,15 +1,15 @@
 
 
 var gulp = require('gulp');
-var webserver = require('gulp-webserver');
+var server = require('gulp-server-livereload');
  
 gulp.task('webserver', function() {
   gulp.src('app')
-    .pipe(webserver({
+    .pipe(server({
       livereload: true,
       directoryListing: true,
-      open: true
+      open: false
     }));
-});
+})
 
 gulp.task('default', ['webserver']);

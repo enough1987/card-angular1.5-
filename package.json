@@ -1,8 +1,14 @@
 {
   "name": "angular2-nodejs",
   "version": "1.0.0",
+  "scripts": {
+    "gulp": "gulp"
+  },
   "devDependencies": {
-    "gulp": "^3.9.0",
-    "gulp-webserver": "^0.9.1"
+    "gulp": "^3.9.1",
+    "gulp-server-livereload": "^1.8.4"
+  },
+  "dependencies": {
+    "gulp": "^3.9.1"
   }
 }
