@@ -1,11 +1,15 @@
 
-<div class="clear" >
+<div class="row" >
 
-    <div class="single-product"
+    <div class="col-xs-12 col-sm-4 single-product"
 ng-repeat="product in ( $ctrl.searched_products || $ctrl.products )"
 ng-if="product.left"
 ng-hide="$ctrl.searched_products && !$ctrl.searched_products.length"    
     >
+
+        <div class="col-xs-12 col-sm-4 height-100">
+            <img ng-src="{{product.img}}" class="img-responsive height-100" />
+        </div>
         <p> 
             <span> Only {{ product.left }} left </span>
         </p>
