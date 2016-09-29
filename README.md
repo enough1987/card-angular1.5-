@@ -7,4 +7,4 @@
 
 `npm run gulp` (starts gulp for compilation, separate terminal/ command line window)
 
- open http://localhost:8000/index.html in a browser
+ open <a href="http://localhost:8000/index.html" > http://localhost:8000/index.html </a> in a browser
