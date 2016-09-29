@@ -1,0 +1,37 @@
+
+<div class="clear" >
+
+    <div class="single-product"
+ng-repeat="product in ( $ctrl.searched_products || $ctrl.products )"
+ng-if="product.left"
+ng-hide="$ctrl.searched_products && !$ctrl.searched_products.length"    
+    >
+        <p> 
+            <span> Only {{ product.left }} left </span>
+        </p>
+        <h3> {{ product.title }} </h3>
+        <ul>
+            <li 
+ng-repeat=" description in product.description"
+            >
+                {{ description }}
+            </li>
+        </ul>
+        <p> 
+            <span> Price: {{ product.price }}</span>
+            <span> Shipping: {{ product.shipping }}</span>
+        </p>
+        <input 
+ng-click=" $ctrl.add_to_card(product) "        
+        type="button" value="add to card" />
+    </div>
+
+   <div 
+   ng-show="$ctrl.searched_products && !$ctrl.searched_products.length" >
+         no result for your search
+         <input ng-click="$ctrl.clear_search()"
+            type="button" value="show all" />
+   </div>
+
+
+</div>

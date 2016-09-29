@@ -1,0 +1,33 @@
+
+<div class="clear" >
+
+    <div 
+        ng-if="!$ctrl.card_view" 
+        ng-click="$ctrl.change_card_view()"
+        class="card-small" >
+
+            <h3> {{ $ctrl.card.length || 0 }} items in card </h3>
+
+    </div>
+
+    <div 
+        ng-if="$ctrl.card_view" 
+        class="card-big" >
+
+        
+        <div class="single-card-product"
+    ng-repeat="product in $ctrl.card"
+    ng-if="product.left"    
+        >
+            <h3> {{ product.title }} </h3>
+            <p> 
+                <span> Price: {{ product.price }}</span>
+                <span> Shipping: {{ product.shipping }}</span>
+            </p>
+        </div>
+
+        <div> Total: {{  $ctrl.get_total() }} </div>
+
+    </div>
+
+</div>
