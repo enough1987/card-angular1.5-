@@ -10,8 +10,6 @@ testApp.component('searchCmpt', {
   },
   controller: function ( searchServ ) {
 
-    console.log( ' searchCmpt is going' );
-
     this.send_search = function(search){
        searchServ.send_search(search);
     };
@@ -27,9 +25,6 @@ testApp.component('productsCmpt', {
     products: '='
   },
   controller: function ( cardServ, searchServ ) {
-
-
-    console.log( ' productsCmpt is going' );
 
     var filter_products = angular.bind(this, function(search){
        return this.products.filter(function(el){
@@ -48,13 +43,11 @@ testApp.component('productsCmpt', {
     };
 
     this.show_product_view = function(val){
-      //console.log( ' ff ' , val , !!(val && !val.length) );
       return !!(val && !val.length);
     };
 
     searchServ.observe_search().then(null, null, angular.bind(this, function( search ){
       this.searched_products = filter_products(search);
-      console.log( 'searched_products ', this.searched_products );
     }));
 
   }
@@ -68,15 +61,10 @@ testApp.component('cardCmpt', {
   },
   controller: function ( cardServ ) {
 
-
-    console.log( ' cardCmpt is going'  );
-
     this.card = cardServ.get_card();
     
     cardServ.observe_card().then(null, null, angular.bind(this, function( card ){
-      console.log( 'cardCmpt got new card ', this.card );
       this.card = card;
-      console.log( 'new ', this.card );
     }));
 
     this.change_card_view = function(){
