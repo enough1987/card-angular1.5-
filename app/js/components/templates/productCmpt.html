@@ -4,7 +4,7 @@
     <div class="col-xs-12 col-md-4 col-sm-6 single-product"
 ng-repeat="product in ( $ctrl.searched_products || $ctrl.products )"
 ng-if="product.left"
-ng-hide=" $ctrl.part_product_view "    
+ng-hide=" $ctrl.show_product_view($ctrl.searched_products) "    
     >
 
         <div class="col-xs-12 col-sm-4 height-100">
@@ -37,7 +37,7 @@ ng-click=" $ctrl.add_to_card(product) "
  </div>
 
     <div 
-   ng-show=" $ctrl.part_product_view " >
+   ng-show=" $ctrl.show_product_view($ctrl.searched_products) " >
          no result for your search
          <input ng-click="$ctrl.clear_search()"
             type="button" value="show all" />
