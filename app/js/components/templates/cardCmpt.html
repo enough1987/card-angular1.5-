@@ -1,32 +1,51 @@
 
-<div class="clear" >
+<div class="col-xs-12 col-sm-4 xs-relative" >
 
     <div 
-        ng-if="!$ctrl.card_view" 
-        ng-click="$ctrl.change_card_view()"
+        ng-show="!$ctrl.card_view" 
         class="card-small" >
 
-            <h3> {{ $ctrl.card.length || 0 }} items in card </h3>
+        <span class="card-small-wrapper relative" >
+            <span class="card-count" > {{ $ctrl.card.length || 0 }} </span>
+            <button 
+        ng-click="$ctrl.change_card_view()" 
+                type="button" class="btn btn-default card-label">
+                <span class="glyphicon glyphicon-shopping-cart"></span>
+            </button>
+        </span>
 
     </div>
 
+
     <div 
-        ng-if="$ctrl.card_view" 
+        ng-show="$ctrl.card_view" 
         class="card-big" >
 
-        
-        <div class="single-card-product"
-    ng-repeat="product in $ctrl.card"
-    ng-if="product.left"    
-        >
-            <h3> {{ product.title }} </h3>
-            <p> 
-                <span> Price: {{ product.price }}</span>
-                <span> Shipping: {{ product.shipping }}</span>
-            </p>
-        </div>
+        <button 
+        ng-click="$ctrl.change_card_view()" 
+                type="button" class="btn btn-default card-close-big">
+             <span class="glyphicon glyphicon-remove"></span>
+         </button>
 
-        <div> Total: {{  $ctrl.get_total() }} </div>
+
+        <div ng-repeat="product in $ctrl.card"
+             ng-if="product.left"
+             class="row single-card-product-card" >
+
+            <div class="col-xs-12 col-sm-4 product-img-wrapper">
+                <img ng-src="{{product.img}}" class="img-responsive product-img" />
+            </div>
+            <div class="col-xs-12 col-sm-8">
+                <h3 class="product-title" > {{ product.title }} </h3>
+                <p> 
+                <span class="product-price" > Price: {{ product.price }}</span>
+                <span class="product-shipping" > Shipping: {{ product.shipping }}</span>
+                </p>
+            </div>
+
+         </div>
+
+        <div class="product-total" > Total: {{  $ctrl.get_total() }} </div>
 
     </div>
 

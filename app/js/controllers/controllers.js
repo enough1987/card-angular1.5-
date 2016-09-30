@@ -10,7 +10,7 @@ testApp.controller("MainCtrl", function () {
         { 
             id: 1, title: 'non prod0', 
             description: ['qqqdfdfdfdf', 'zzrtrrtrtrtr', 'aartrtrtrtrt', 'vvvvvvvvvv'],
-            img: 'img/2.jpg',
+            img: 'img/3.jpg',
             price: 100,
             shipping: 20,
             left: 0
@@ -26,7 +26,7 @@ testApp.controller("MainCtrl", function () {
         { 
             id: 2, title: 'super prod2', 
             description: ['qqqdfdfdfdf', 'zzrtrrtrtrtr', 'aartrtrtrtrt', 'vvvvvvvvvv'],
-            img: 'img/2.jpg',
+            img: 'img/3.jpg',
             price: 550,
             shipping: 20,
             left: 4
@@ -42,16 +42,24 @@ testApp.controller("MainCtrl", function () {
         { 
             id: 4, title: 'look prod4', 
             description: ['qqqdfdfdfdf', 'zzrtrrtrtrtr', 'aartrtrtrtrt', 'vvvvvvvvvv'],
-            img: 'img/2.jpg',
+            img: 'img/3.jpg',
             price: 3300,
             shipping: 20,
             left: 2
         },
         { 
-            id: 5, title: 'gggggg prod4', 
+            id: 5, title: 'gggggg prod5', 
             description: ['qqqdfdfdfdf', 'zzrtrrtrtrtr', 'aartrtrtrtrt', 'vvvvvvvvvv'],
             img: 'img/3.jpg',
             price: 300,
+            shipping: 20,
+            left: 2
+        },
+        { 
+            id: 6, title: 'zzzzz prod6', 
+            description: ['qqqdfdfdfdf', 'zzrtrrtrtrtr', 'aartrtrtrtrt', 'vvvvvvvvvv'],
+            img: 'img/3.jpg',
+            price: 30220,
             shipping: 20,
             left: 2
         }
