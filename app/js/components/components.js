@@ -47,8 +47,15 @@ testApp.component('productsCmpt', {
       cardServ.set_card( item );
     };
 
+    this.show_product_view = function(val){
+      console.log( ' ff ' , val , !!(val && !val.length) );
+      return !!(val && !val.length);
+    };
+
     searchServ.observe_search().then(null, null, angular.bind(this, function( search ){
       this.searched_products = filter_products(search);
+      this.part_product_view = this.show_product_view(this.searched_products);
+      console.log( 'searched_products ', this.searched_products );
     }));
 
   }
