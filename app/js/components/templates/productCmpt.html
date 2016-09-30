@@ -36,11 +36,11 @@ ng-click=" $ctrl.add_to_card(product) "
 
  </div>
 
-    <div 
+    <div class="no_result"
    ng-show=" $ctrl.show_product_view($ctrl.searched_products) " >
          no result for your search
          <input ng-click="$ctrl.clear_search()"
-            type="button" value="show all" />
+            type="button" value="show all" class="btn btn-default" />
    </div>
 
 </div>

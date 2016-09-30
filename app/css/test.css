@@ -72,6 +72,11 @@
     width: 100%;
 }
 
+.no_result {
+    margin: 3em auto;
+    text-align: center;
+}
+
 .card-label {
 
 }
