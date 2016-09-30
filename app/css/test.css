@@ -67,6 +67,11 @@
     margin-top: 2em;
 }
 
+.empty-cart {
+    float: both;
+    width: 100%;
+}
+
 .card-label {
 
 }

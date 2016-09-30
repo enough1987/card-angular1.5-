@@ -21,12 +21,21 @@
         ng-show="$ctrl.card_view" 
         class="card-big" >
 
+
+         <data-wr ng-show="!$ctrl.card.length"  class="empty-cart" >
+             Shopping cart is empty .
+             <a 
+             ng-click="$ctrl.change_card_view()"
+             href="" > Close cart</a>
+         </data-wr>
+
+        <data-wr ng-show="$ctrl.card.length" >
+
         <button 
         ng-click="$ctrl.change_card_view()" 
                 type="button" class="btn btn-default card-close-big">
              <span class="glyphicon glyphicon-remove"></span>
          </button>
-
 
         <div ng-repeat="product in $ctrl.card"
              ng-if="product.left"
@@ -45,7 +54,9 @@
 
          </div>
 
-        <div class="product-total" > Total: {{  $ctrl.get_total() }} </div>
+          <div class="product-total" > Total: {{  $ctrl.get_total() }} </div>
+
+        </data-wr>
 
     </div>
 
